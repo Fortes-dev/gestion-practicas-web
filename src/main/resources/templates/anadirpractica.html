@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <form action="/principalAlumno" method="post">
+            <ul>
+                <li>
+                    <label for="fecha">Fecha</label>
+                    <input type="date" id="fecha" name="fecha">
+
+                </li>
+
+                <li>
+                    <label for="select">Tipo de practica</label>
+                    <select id="select" name="select">
+                        <option value="Dual">Dual</option>
+                        <option value="FCT">FCT</option>
+                    </select>
+
+                </li>
+
+                <li>
+                    <label for="descripcion">Descripcion</label>
+                    <textarea id="descripcion" name="descripcion" rows="4" cols="50"></textarea>
+                </li>
+
+                <li>
+                    <label for="horas">Horas empleadas</label>
+                    <input type="range" min="1" max="8" id="horas" name="horas" oninput="this.nextElementSibling.value = this.value">    
+                </li>
+
+                <li>
+                    <label for="observaciones">Observaciones</label>
+                    <textarea id="observaciones" name="observaciones" rows="4" cols="50"></textarea>
+                </li>
+
+                <li>
+                    <input type="submit" value="Añadir">
+                </li>
+
+            </ul>
+
+
+        </form>
+
+
+    </body>
+</html>
