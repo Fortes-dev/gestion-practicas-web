@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author medin
  */
 @Controller
-@RequestMapping("/api")
 public class ModificarPracticaController {
 
     @Autowired
