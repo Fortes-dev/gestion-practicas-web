@@ -4,7 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
@@ -12,36 +12,37 @@ and open the template in the editor.
     </head>
     <body>
 
-        <form action="/principalAlumno" method="post">
+        <form th:action="@{modificar/44}" method="post" th:object="${prac}">
+
             <ul>
                 <li>
                     <label for="fecha">Fecha</label>
-                    <input type="date" id="fecha" name="fecha">
+                    <input th:value="${practica.fecha} "type="date" id="fecha" name="fecha" th:field="*{fecha}">
 
                 </li>
 
                 <li>
                     <label for="select">Tipo de practica</label>
                     <select id="select" name="select">
-                        <option value="Dual">Dual</option>
-                        <option value="FCT">FCT</option>
+                        <option th:each="i : ${tipoarray}" th:value="${i}" th:text="${i}" 
+                                th:selected="${i==practica.tipo}" th:field="*{tipo}"></option>
                     </select>
 
                 </li>
 
                 <li>
                     <label for="descripcion">Descripcion</label>
-                    <textarea id="descripcion" name="descripcion" rows="4" cols="50"></textarea>
+                    <textarea th:text="${practica.descripcion}" id="descripcion" name="descripcion" rows="4" cols="50" th:field="*{descripcion}"></textarea>
                 </li>
 
                 <li>
                     <label for="horas">Horas empleadas</label>
-                    <input type="range" min="1" max="8" id="horas" name="horas" oninput="this.nextElementSibling.value = this.value">    
+                    <input th:value="${practica.horasEmpleadas}" type="range" min="1" max="8" id="horas" name="horas" th:field="*{horasEmpleadas}" oninput="this.nextElementSibling.value = this.value">    
                 </li>
 
                 <li>
                     <label for="observaciones">Observaciones</label>
-                    <textarea id="observaciones" name="observaciones" rows="4" cols="50"></textarea>
+                    <textarea th:text="${practica.observaciones}" id="observaciones" name="observaciones" rows="4" cols="50" th:field="*{observaciones}"></textarea>
                 </li>
 
                 <li>
