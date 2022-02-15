@@ -4,7 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
@@ -14,6 +14,7 @@ and open the template in the editor.
         <img src="../img/user.png" alt="">
         <p>Francisco Romero</p>
         <p>fran@gmail.com<br></p>
-        
+        <a th:href="@{/anadir}">Añadir</a>
+        <a th:href="@{/modificar}">Modificar</a>
     </body>
 </html>
