@@ -33,8 +33,8 @@ public class AnadirPracticaController {
     @Autowired
     private AlumnoRepository repAl;
 
-    @GetMapping("{idAlumno}/anadir")
-    public String setModificar(Model pagina) {
+    @GetMapping("/anadir")
+    public String setAnadir(Model pagina) {
 
         ArrayList<String> array = new ArrayList<String>();
         array.add("Dual");
@@ -47,12 +47,10 @@ public class AnadirPracticaController {
         return "anadirpractica";
     }
 
-    @PostMapping("{idAlumno}/anadir")
-    public String greetingSubmit(@ModelAttribute Practica prac, Model model, @PathVariable Long idAlumno) {
+    @PostMapping("/anadir")
+    public String anadir(@ModelAttribute Practica prac, Model model) {
         
-        Alumno a = repAl.getById(idAlumno);
-        
-        model.addAttribute("idAlumno", idAlumno);
+        Alumno a = repAl.getById(12L);
         
         prac.setIdAlumno(a);
         rep.save(prac);

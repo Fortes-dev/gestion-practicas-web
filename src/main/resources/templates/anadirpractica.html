@@ -12,7 +12,7 @@ and open the template in the editor.
     </head>
     <body>
 
-        <form action="#" th:action="@{/${idAlumno}/anadir}" method="post" th:object="${prac}">
+        <form action="#" th:action="@{/anadir}" method="post" th:object="${prac}">
 
             <ul>
                 <li>
@@ -23,9 +23,8 @@ and open the template in the editor.
 
                 <li>
                     <label for="select">Tipo de practica</label>
-                    <select id="select" name="select">
-                        <option th:each="i : ${tipoarray}" th:value="${i}" th:text="${i}" 
-                                th:field="*{tipo}"></option>
+                    <select id="select" name="select" th:field="*{tipo}">
+                        <option th:each="i : ${tipoarray}" th:value="${i}" th:text="${i}"></option>
                     </select>
 
                 </li>
@@ -37,7 +36,8 @@ and open the template in the editor.
 
                 <li>
                     <label for="horas">Horas empleadas</label>
-                    <input type="range" min="1" max="8" id="horas" name="horas" th:field="*{horasEmpleadas}" oninput="this.nextElementSibling.value = this.value">    
+                    <input type="range" min="1" max="8" id="horas" name="horas" th:field="*{horasEmpleadas}"> 
+                    <span id="inputRange"></span>
                 </li>
 
                 <li>
@@ -54,6 +54,15 @@ and open the template in the editor.
 
         </form>
 
+        <script>
 
+            const input = document.getElementById("inputRange");
+            const range = document.getElementById("horas");
+            range.addEventListener("input", () => {
+                input.innerText = range.value;
+            },
+                    false);
+
+        </script>
     </body>
 </html>

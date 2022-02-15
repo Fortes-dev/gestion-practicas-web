@@ -12,7 +12,7 @@ and open the template in the editor.
     </head>
     <body>
 
-        <form th:action="@{modificar/44}" method="post" th:object="${prac}">
+        <form th:action="@{/anadir}" method="post" th:object="${prac}">
 
             <ul>
                 <li>
@@ -23,9 +23,9 @@ and open the template in the editor.
 
                 <li>
                     <label for="select">Tipo de practica</label>
-                    <select id="select" name="select">
+                    <select id="select" name="select" th:field="*{tipo}">
                         <option th:each="i : ${tipoarray}" th:value="${i}" th:text="${i}" 
-                                th:selected="${i==practica.tipo}" th:field="*{tipo}"></option>
+                                th:selected="${i==practica.tipo}"></option>
                     </select>
 
                 </li>
@@ -37,7 +37,8 @@ and open the template in the editor.
 
                 <li>
                     <label for="horas">Horas empleadas</label>
-                    <input th:value="${practica.horasEmpleadas}" type="range" min="1" max="8" id="horas" name="horas" th:field="*{horasEmpleadas}" oninput="this.nextElementSibling.value = this.value">    
+                    <input th:value="${practica.horasEmpleadas}" type="range" min="1" max="8" id="horas" name="horas" th:field="*{horasEmpleadas}" >  
+                    <span id="inputRange"></span>
                 </li>
 
                 <li>
@@ -53,7 +54,16 @@ and open the template in the editor.
 
 
         </form>
+        <script>
 
+            const input = document.getElementById("inputRange");
+            const range = document.getElementById("horas");
+            range.addEventListener("input", () => {
+                input.innerText = range.value;
+            },
+                    false);
+
+        </script>
 
     </body>
 </html>
