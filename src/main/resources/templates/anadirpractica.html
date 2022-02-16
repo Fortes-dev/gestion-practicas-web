@@ -48,6 +48,7 @@ and open the template in the editor.
                 <li>
                     <input type="submit" value="Guardar">
                 </li>
+                <button th:href="@{/login}">Volver</button>
 
             </ul>
 
@@ -58,6 +59,7 @@ and open the template in the editor.
 
             const input = document.getElementById("inputRange");
             const range = document.getElementById("horas");
+            input.innerText = range.value;
             range.addEventListener("input", () => {
                 input.innerText = range.value;
             },
