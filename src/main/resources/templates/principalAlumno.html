@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" type="text/css" th:href="@{/styles/layout.css}">
+        <script th:src="@{/styles/main.js}"></script>
+        <title>Bienvenido alumno</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <!-- BLOQUE 1 -->
+       <div class="topbar">
+            <div class="dropdown">
+                <button class="dropbtn">Menu</button>
+                <div class="dropdown-content">
+                    <a href="#">Cerrar sesión</a>
+                    <a href="#">Acerca de</a>
+                </div>
+            </div>
+           </div>
+           <div class="infopracticas">
+               <div class="infoestudiante"><!-- Imagen & info basica del estudiante -->
+                   <div class="mugshot">
+                       <img th:src="@{/img/christopher.png}" height="220" width="200"> 
+                   </div>
+                   <div class="infoestudiantetexto">
+                       <h1 th:text="${principalAlumno.nombre}">Pablo Hierrezuelo</h1>
+                       <p>2º DAM</p>
+                       <p>ViewNext</p>  
+                   </div>    
+                </div>
+               <div class="logoempresa">
+                <img th:src="@{/img/accenture.png}">
+                </div>
+           </div> 
+               
+        <!-- BLOQUE 2 -->
+        <div class="slidertareas">
+            
+            <p class="extra"> Prácticas </p>
+            <div class="wrapper">
+                <button class="previous"><img th:src="@{/img/flechaIzquierda.png}"></button>
+                    <div class="overflow">
+                      <div class="anadir"></div>
+                      <div class="bloco"><p>Day 1</p></div>
+                      <div class="bloco"><p>Day 1</p></div>
+                      <div class="bloco"><p>Day 1</p></div>
+                      <div class="bloco"><p>Day 1</p></div>
+                      <div class="bloco"><p>Day 1</p></div>
+                      <div class="bloco"><p>Day 1</p></div>
+                      <div class="bloco"><p>Day 1</p></div><!-- comment -->
+                      <div class="bloco"><p>Day 1</p></div><!-- comment -->
+                      <div class="bloco"><p>Day 1</p></div>
+                    </div>
+                <button class="next">
+                    <img th:src="@{/img/flechaDerechaa.png}">
+                </button>
+            </div>
+            <button class="historial">Historial</button>
+            <button class="anadirPractica">Añadir Practica</button>
+        </div>
+        
+        
+        <!-- BLOQUE 2 -->
+        <div class="horas">
+            <p class="restantes">Horas Restantes Dual: 50</p><!-- placegolder -->
+            <p class="realizadas">Horas realizadas: 2</p><!-- comment -->
+            <p class="restantes">Horas Restantes FCT 50</p><!-- placegolder -->
+            <p class="realizadas">Horas realizadas: 2</p><!-- comment -->
+        </div>
+       
+    </body>
+</html>

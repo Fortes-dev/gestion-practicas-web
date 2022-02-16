@@ -1,0 +1,436 @@
+
+body{
+    margin: 0;
+    font-size: 16px;
+    font-family: arial;
+}
+
+
+.topbar{
+background-color: #115bce;
+width:100%;
+}
+
+.dropbtn {
+  background-color: #115bce;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  font-weight: bold;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  
+  display: block;
+}
+.infoestudiante{
+    margin: 35px;
+}
+.mugshot{
+    margin-right:20px;
+}
+.infoestudiante{
+    display: -webkit-inline-box;
+}
+
+.infoestudiantetexto{
+    padding-top: 15px;
+}
+.infoestudiantetexto p{
+    padding-top: 5px;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+.infoestudiantetexto h1{
+    text-decoration:underline;
+}
+
+.logoempresa{
+    float:right;
+    padding-right: 6%;
+    padding-top: 45px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #49A2E2;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #49A2E2;}
+
+/*    --------------------------------------------------
+  :: Slider Section
+  -------------------------------------------------- */
+
+.slidertareas{
+box-sizing: border-box;
+padding: 0;
+width: 75%;
+display: block;
+margin: auto;
+}
+
+.historial{
+    background-color: #115bce;
+    color:whitesmoke;
+    font-weight: 600;
+    margin-top: 25px;
+    width:wrap-content; 
+    font-size: 1.3rem;
+    border-radius: 6px;
+}
+
+.anadirPractica{
+    background-color: #115bce;
+    color:whitesmoke;
+    font-weight: 600;
+    margin-top: 25px;
+    width:wrap-content; 
+    font-size: 1.3rem;
+    border-radius: 6px;
+    display:none;
+}
+
+.slidertareas p{
+    font-weight:bold;
+    text-decoration: underline;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.subtitulo{
+    font-weight: 750;
+    font-size: 2em;
+    text-decoration: underline;
+    display:block;
+    margin:auto;
+}
+.wrapper{
+  position:relative;
+  margin:0 auto;
+  max-width:1000px;
+  background:#edeff0;
+  height:200px;
+  overflow:hidden;
+}
+
+/*.wrapper::before{
+    content:url('../img/flechaIzquierda.png');
+    
+}
+
+.wrapper::after{
+    content:url('../img/flechaDerechaa.png');
+    
+}*/
+.overflow{
+  display:grid;
+  grid-auto-columns: minmax(170px, auto);
+  grid-gap:15px;
+  grid-auto-flow: column;
+  width:100%;
+  height:100%;
+  transform:translateX(0px);
+  transition:all 1s ease;
+  
+  
+}
+
+.bloco{
+  position:relative;
+  height:100%;
+  width:100%;
+  background:#edeff0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:blue;
+  
+}
+
+.bloco::before{
+    content:"";
+    background-image: url('../img/iconLibro.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.45;
+}
+
+.anadir{
+  position:relative;
+  height:100%;
+  width:100%;
+  background:#edeff0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:blue;  
+  background-image: url('../img/plusIcon.png');
+  background-repeat: no-repeat;
+  background-position:center;
+}
+
+/*.anadir::before{
+    content:"";
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}*/
+
+.bloco p{
+    font-size:1.1rem;
+    position:relative;
+    font-weight:700;
+}
+.next{
+  position:absolute;
+  right:0;
+  top:30%;
+  z-index:9;
+  opacity:1;
+}
+.previous{
+  position:absolute;
+  left:0;
+  top:30%;
+  z-index:9;
+  opacity:0;
+}
+
+/*    --------------------------------------------------
+  :: Horas Section
+  -------------------------------------------------- */
+.horas{
+    width: 75%;
+    display: block;
+    margin: auto;
+    padding-top: 30px;
+  }
+  .restantes{
+      font-size: 2rem;
+      font-weight: bold;
+      margin-top:10px;
+      margin-bottom: 10px;
+  }
+  .realizadas{
+      font-size:1.4rem;
+      font-weight:500;
+      
+      
+  } 
+
+
+
+
+
+
+
+
+
+/*    --------------------------------------------------
+  :: Login Section
+  -------------------------------------------------- */
+.logo{
+    display: block;
+    margin: auto;
+   /* transform: translateY(20%);*/
+}
+
+#login {
+    padding-top: 50px
+}
+#login .form-wrap {
+    width: 30%;
+    margin: 0 auto;
+    /*transform: translateY(40%);*/
+}
+#login h1 {
+    color: #115bce;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+#login .form-group {
+    margin-bottom: 25px;
+}
+#login .checkbox {
+    margin-bottom: 20px;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+#login .checkbox.show:before {
+    content: '\e013';
+    color: #115bce;
+    font-size: 17px;
+    margin: 1px 0 0 3px;
+    position: absolute;
+    pointer-events: none;
+    font-family: 'Glyphicons Halflings';
+}
+#login .checkbox .character-checkbox {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+    display: inline-block;
+}
+#login .checkbox .label {
+    color: #6d6d6d;
+    font-size: 13px;
+    font-weight: normal;
+}
+#login .btn.btn-custom {
+    font-size: 14px;
+  margin-bottom: 20px;
+}
+#login .forget {
+    font-size: 13px;
+  text-align: center;
+  display: block;
+}
+
+/*    --------------------------------------------------
+  :: Inputs & Buttons
+  -------------------------------------------------- */
+.form-control {
+    color: #212121;
+}
+.btn-custom {
+    color: #fff;
+  background-color: #115bce;
+}
+.btn-custom:hover,
+.btn-custom:focus {
+    color: #fff;
+}
+
+/*    --------------------------------------------------
+    :: Footer
+  -------------------------------------------------- */
+#footer {
+    color: #115bce;
+    font-size: 12px;
+    text-align: center;
+}
+#footer p {
+    margin-bottom: 0;
+}
+#footer a {
+    color: inherit;
+}
+
+/*    --------------------------------------------------
+    :: MEDIA QUERIES
+  -------------------------------------------------- */
+@media(max-width:767px){
+  .wrapper{
+    max-width:100%;
+  }
+  .overflow{
+    grid-auto-columns: minmax(200px, auto);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #login .form-wrap {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.infoestudiante{
+    display:block;
+}
+.mugshot img{
+    display: block;
+    margin: auto;
+}
+
+.logoempresa{
+    padding:0;
+    margin-bottom:30px;
+}
+
+.logoempresa img{
+    display: block; 
+    height: auto; 
+    width: auto; 
+    max-width: 90%; 
+    margin: auto;
+}
+.anadir{
+    display:none;
+}
+.anadirPractica{
+    display:inline-block;
+}
+
+.slidertareas{
+    width: 90%;
+}
+.overflow{
+    overflow-x: auto;
+  white-space: nowrap;
+}
+
+.next{
+    display:none;
+}
+
+.previous{
+    display:none;
+}
+
+.historial button{
+    width:fit-content;
+}
+
+}
+@media(min-width:1440px){
+    .extra, .historial{
+    margin-left: 180px;
+}
+.logoempresa{
+    float:right;
+    padding-right: 12%;
+    padding-top: 45px;
+}
+}

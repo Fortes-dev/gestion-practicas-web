@@ -4,6 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>TODO supply a title</title>
@@ -49,6 +50,7 @@ and open the template in the editor.
                 <li>
                     <input type="submit" value="Guardar">
                 </li>
+                <button th:href="@{/login}">Volver</button>
 
             </ul>
 
@@ -58,6 +60,7 @@ and open the template in the editor.
 
             const input = document.getElementById("inputRange");
             const range = document.getElementById("horas");
+            input.innerText = range.value;
             range.addEventListener("input", () => {
                 input.innerText = range.value;
             },
