@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Historial Prácticas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" th:href="@{/styles/historialStyles.css}">
+    <link rel="stylesheet" type="text/css" href="/styles/historialStyles.css">
 </head>
 <body>
-    <h1>Roberto García Rodríguez</h1>
-    <h5>2ºDAM</h5>
+    <h1 th:text="${nombre}">Null</h1>
+    <h5 th:text="${curso}">Null</h5>
     <div class="container1">
         <div class="contenido"><h4>Historial de Prácticas</h4></div>
-        <div class="contenido">
+        <div class="contenido" id="derecha">
             <select id="filtro" name="filtros">
                 <option value="volvo">ID</option>
-                <option value="saab">Otro</option>
-                <option value="fiat">Otro</option>
-                <option value="audi">Otro</option>
+                <option value="saab">Fecha</option>
+                <option value="fiat">Tipo</option>
             </select>
         <input type="text" id="filtroTxt">
         </div>
@@ -30,29 +29,19 @@
             <th scope="col">Tipo</th>
             <th scope="col">Horas Empleadas</th>
             <th scope="col">Descripción</th>
+            <th scope="col">Observaciones</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>Hola</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
+        <tr th:each="practica : ${practicas}" th:href="@{/modificar}" style="cursor: pointer">
+            <th th:text="${practica.id}">Null</th>
+            <td th:text="${practica.fecha}">Null</td>
+            <td th:text="${practica.tipo}">Null</td>
+            <td th:text="${practica.horasEmpleadas}">Null</td>
+            <td th:text="${practica.descripcion}">Null</td>
+            <td th:text="${practica.observaciones}">Null</td>
         </tr>
         </tbody>
     </table>
-    <button type="button" class="btn btn-secondary btn-sm">Añadir</button>
 </body>
 </html>
