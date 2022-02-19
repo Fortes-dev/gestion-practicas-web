@@ -1,0 +1,12 @@
+body {
+    padding: 20px;
+}
+
+.container1 {
+    width: 100%;
+    display: flex;
+}
+
+#derecha {
+    margin-left: auto;
+}
