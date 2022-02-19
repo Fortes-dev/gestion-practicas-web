@@ -6,7 +6,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <link rel="stylesheet" type="text/css" th:href="@{/styles/layout.css}">
+        <link  rel="stylesheet" type="text/css" th:href="@{/styles/layout.css}">
         <script th:src="@{/styles/main.js}"></script>
         <title>Bienvenido alumno</title>
         <meta charset="UTF-8">
@@ -26,16 +26,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
            <div class="infopracticas">
                <div class="infoestudiante"><!-- Imagen & info basica del estudiante -->
                    <div class="mugshot">
-                       <img th:src="@{/img/christopher.png}" height="220" width="200"> 
+                       <img th:src="@{${principalAlumno.fotoUrl}}" height="220" width="200"> 
                    </div>
                    <div class="infoestudiantetexto">
                        <h1 th:text="${principalAlumno.nombre}">Pablo Hierrezuelo</h1>
-                       <p>2º DAM</p>
-                       <p>ViewNext</p>  
+                       <p th:text="${principalAlumno.curso}">2º DAM</p>
+                       <p th:text="${principalAlumno.idEmpresa.nombre}">ViewNext</p>  
                    </div>    
                 </div>
                <div class="logoempresa">
-                <img th:src="@{/img/accenture.png}">
+                <img th:src="@{${principalAlumno.idEmpresa.fotoUrl}}">
                 </div>
            </div> 
                
@@ -47,15 +47,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                 <button class="previous"><img th:src="@{/img/flechaIzquierda.png}"></button>
                     <div class="overflow">
                       <div class="anadir"></div>
-                      <div class="bloco"><p>Day 1</p></div>
-                      <div class="bloco"><p>Day 1</p></div>
-                      <div class="bloco"><p>Day 1</p></div>
-                      <div class="bloco"><p>Day 1</p></div>
-                      <div class="bloco"><p>Day 1</p></div>
-                      <div class="bloco"><p>Day 1</p></div>
-                      <div class="bloco"><p>Day 1</p></div><!-- comment -->
-                      <div class="bloco"><p>Day 1</p></div><!-- comment -->
-                      <div class="bloco"><p>Day 1</p></div>
+                        <div class="iteracion" th:each="p:${principalAlumno.curso}">
+                            <div class="bloco"><p>Day 1</p></div>
+                            <div class="bloco"><p>Day 1</p></div>
+                            <div class="bloco"><p>Day 1</p></div>
+                            <div class="bloco"><p>Day 1</p></div>
+                            <div class="bloco"><p>Day 1</p></div>
+                            <div class="bloco"><p>Day 1</p></div>
+                            <div class="bloco"><p>Day 1</p></div><!-- comment -->
+                            <div class="bloco"><p>Day 1</p></div><!-- comment -->
+                            <div class="bloco"><p>Day 1</p></div>
+                      </div>
                     </div>
                 <button class="next">
                     <img th:src="@{/img/flechaDerechaa.png}">
@@ -68,10 +70,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
         
         <!-- BLOQUE 2 -->
         <div class="horas">
-            <p class="restantes">Horas Restantes Dual: 50</p><!-- placegolder -->
-            <p class="realizadas">Horas realizadas: 2</p><!-- comment -->
-            <p class="restantes">Horas Restantes FCT 50</p><!-- placegolder -->
-            <p class="realizadas">Horas realizadas: 2</p><!-- comment -->
+            <p class="restantes"th:text="'Horas Restantes Dual: '+ ${horasDualRest}">Horas Restantes Dual: 50</p><!-- placegolder -->
+            <p class="realizadas" th:text="'Horas realizadas: '+ ${horasDualReal}">Horas realizadas: 2</p><!-- comment -->
+            <p class="restantes" th:text="'Horas Restantes FCT: '+ ${horasFctRest}">Horas Restantes FCT 50</p><!-- placegolder -->
+            <p class="realizadas" th:text="'Horas realizadas: '+ ${horasFctReal}">Horas realizadas: 2</p><!-- comment -->
         </div>
        
     </body>

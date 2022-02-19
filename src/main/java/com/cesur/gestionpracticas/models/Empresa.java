@@ -50,5 +50,7 @@ public class Empresa implements Serializable {
     @Column(name = "logo_img")
     private Blob logoImg;
 
+    @Column(name = "foto_url", nullable = false)
+    private String fotoUrl;
     
 }
