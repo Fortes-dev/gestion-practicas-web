@@ -1,0 +1,25 @@
+body {
+    padding-left: 400px;
+    padding-right: 400px;
+    padding-bottom: 400px;
+    padding-top: 200px;
+
+}
+.form-group {
+    margin-bottom: 60px;
+}
+
+.form-selector {
+    padding-right: 700px;
+}
+
+
+
+.container1 {
+    width: 100%;
+    display: flex;
+}
+
+#derecha {
+    margin-left: auto;
+}

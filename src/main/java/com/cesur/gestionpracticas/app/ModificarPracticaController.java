@@ -11,10 +11,9 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 /**
  *
@@ -25,14 +24,12 @@ public class ModificarPracticaController {
 
     @Autowired
     private PracticasRepository rep;
-    @Autowired
-    private AlumnoRepository repAl;
 
-    @GetMapping("/modificar")
-    public String setModificar(Model pagina, HttpSession session) {
+    @RequestMapping(value = "/modificar/{idP}", method = RequestMethod.GET)
+    public String setModificar(@PathVariable Long idP,Model pagina) {
 
-        Long idPrac = (Long) session.getAttribute("idPrac");
-        Practica p = rep.getById(idPrac);
+
+        Practica p = rep.getById(idP);
 
         ArrayList<String> array = new ArrayList<String>();
         array.add("Dual");
@@ -45,18 +42,25 @@ public class ModificarPracticaController {
         return "modificarpractica";
     }
 
-    @PostMapping("/modificar")
-    public String modificar(Model pagina, @ModelAttribute Practica prac, HttpSession session) {
 
-        Long idAl = (Long) session.getAttribute("idAl");
-        Long idPrac = (Long) session.getAttribute("idPrac");
-        Alumno a = repAl.getById(idAl);
-        prac.setIdAlumno(a);
-        prac.setId(idPrac);
-
+    @RequestMapping(value = "/modificar/{idP}", method = RequestMethod.POST)
+    public String modificar(@ModelAttribute Practica prac, @PathVariable Long idP) {
+        Alumno al = rep.getById(idP).getIdAlumno();
+        prac.setId(idP);
+        prac.setIdAlumno(al);
         rep.save(prac);
+        return "redirect:/alumno/"+al.getId();
 
-        return "perfilprofesor";
+    }
+
+    @Transactional
+    @RequestMapping(value = "/modificar/delete/{idP}", method = RequestMethod.GET)
+    public String eliminar(@ModelAttribute Practica prac, @PathVariable Long idP) {
+        Alumno al = rep.getById(idP).getIdAlumno();
+
+        rep.deleteFromId(idP);
+
+        return "redirect:/alumno/"+al.getId();
 
     }
 

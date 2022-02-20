@@ -24,7 +24,7 @@ public class HistorialPracticasController {
 
 
     @RequestMapping(value="/historialPractica/{id}", method = RequestMethod.GET)
-    public String setHistorial(Model atrb, HttpSession session, @PathVariable Long id) {
+    public String setHistorial(Model atrb, @PathVariable Long id) {
         //session.setAttribute("idAl", 2L);
         //Long idAlum = (Long) session.getAttribute("idAl");
         System.out.println("el id que llega es "+id);

@@ -47,9 +47,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
                 <button class="previous"><img th:src="@{/img/flechaIzquierda.png}"></button>
                     <div class="overflow">
                         <a th:href="@{'/anadir/'+${principalAlumno.id}}"> <div class="anadir"></div></a>
-                        <div class="iteracion" th:each="p:${principalAlumno.practicas}">
+                        <div class="iteracion" th:each="p:${pracs}" th:onclick="'javascript:rowClicked(\'' + ${p.id} + '\');'">
                             <div class="bloco"><p th:text="${p.fecha}">Hola</p></div>
-                            <!--<a th:href="@{'/editar-practica/13/40'}">1</a>-->
                       </div>
                     </div>
                 <button class="next">
@@ -70,4 +69,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
         </div>
        
     </body>
+    <script>
+        function rowClicked(value) {
+            location.href = "/modificar/" + value;
+        }
+    </script>
 </html>

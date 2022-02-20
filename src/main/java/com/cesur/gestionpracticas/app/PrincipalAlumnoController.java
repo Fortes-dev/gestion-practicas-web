@@ -18,6 +18,7 @@ import java.util.logging.Logger;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -35,6 +36,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class PrincipalAlumnoController {
     @Autowired
    private AlumnoRepository repAl;
+    @Autowired
    private PracticasRepository rePrac; 
     
     @GetMapping("/alumno/{id}")
@@ -43,11 +45,13 @@ public class PrincipalAlumnoController {
         Alumno a = repAl.getById(id); 
         model.addAttribute("principalAlumno",a );
         int horasDualRest=calcularHoras("Dual", a,"restantes");
-        int horasFctRest=calcularHoras("fct", a,"restantes");
+        int horasFctRest=calcularHoras("FCT", a,"restantes");
         
         int horasDualReal=calcularHoras("Dual", a,"realizadas");
-        int horasFctReal=calcularHoras("fct", a,"realizadas");
-        
+        int horasFctReal=calcularHoras("FCT", a,"realizadas");
+
+        List<Practica> p = rePrac.findByFecha(a, PageRequest.of(0,6));
+        model.addAttribute("pracs", p);
         
         model.addAttribute("horasDualRest", horasDualRest);
         model.addAttribute("horasFctRest", horasFctRest);
