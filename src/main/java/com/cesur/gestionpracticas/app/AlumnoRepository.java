@@ -16,7 +16,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author medin
  */
 public interface AlumnoRepository extends JpaRepository<Alumno, Long>{
-    
-    
-   
+    public Alumno findByEmail(String email);
+        
+      
 }

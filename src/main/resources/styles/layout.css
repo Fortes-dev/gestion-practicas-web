@@ -327,6 +327,12 @@ margin: auto;
   display: block;
 }
 
+.wrongPassword p{
+    color:red;
+    margin:auto;
+    display:block;
+}
+
 /*    --------------------------------------------------
   :: Inputs & Buttons
   -------------------------------------------------- */
