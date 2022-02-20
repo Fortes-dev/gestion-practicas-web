@@ -6,6 +6,9 @@
 package com.cesur.gestionpracticas.app;
 
 import com.cesur.gestionpracticas.models.Alumno;
+import com.cesur.gestionpracticas.models.Practica;
+import java.util.List;
+import org.hibernate.Session;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
@@ -13,5 +16,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author medin
  */
 public interface AlumnoRepository extends JpaRepository<Alumno, Long>{
-      
+    
+    
+   
 }

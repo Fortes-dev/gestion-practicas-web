@@ -35,6 +35,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class PrincipalAlumnoController {
     @Autowired
    private AlumnoRepository repAl;
+   private PracticasRepository rePrac; 
     
     @GetMapping("/alumno/{id}")
     public String infoAlumno(@PathVariable Long id, Model model){
@@ -44,14 +45,15 @@ public class PrincipalAlumnoController {
         int horasDualRest=calcularHoras("Dual", a,"restantes");
         int horasFctRest=calcularHoras("fct", a,"restantes");
         
-        int horasDualReal=calcularHoras("Dual", a,"realizadas");;
-        int horasFctReal=calcularHoras("Dual", a,"realizadas");;
+        int horasDualReal=calcularHoras("Dual", a,"realizadas");
+        int horasFctReal=calcularHoras("fct", a,"realizadas");
         
         
         model.addAttribute("horasDualRest", horasDualRest);
         model.addAttribute("horasFctRest", horasFctRest);
         model.addAttribute("horasDualReal", horasDualReal);
         model.addAttribute("horasFctReal", horasFctReal);
+                
         return "principalAlumno";
     }
        

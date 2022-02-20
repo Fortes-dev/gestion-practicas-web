@@ -6,6 +6,7 @@
 package com.cesur.gestionpracticas.app;
 
 import com.cesur.gestionpracticas.models.Practica;
+import org.hibernate.Session;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
@@ -13,5 +14,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author medin
  */
 public interface PracticasRepository  extends JpaRepository<Practica, Long>{
+    
+    
+    
+
     
 }

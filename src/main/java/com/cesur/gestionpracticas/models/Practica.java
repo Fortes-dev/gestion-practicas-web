@@ -9,6 +9,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  *
@@ -27,7 +28,8 @@ public class Practica implements Serializable {
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_alumno", nullable = false)
     private Alumno idAlumno;
-
+    
+    //@DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "fecha", nullable = false)
     private Date fecha;
 

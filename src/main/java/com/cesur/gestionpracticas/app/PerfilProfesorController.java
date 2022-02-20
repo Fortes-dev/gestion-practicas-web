@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class PerfilProfesorController {
     
-    @GetMapping("/login")
+    @GetMapping("/perfilProfesor")
     public String index(Model model, HttpSession session) {
         
         session.setAttribute("idAl", 12L);

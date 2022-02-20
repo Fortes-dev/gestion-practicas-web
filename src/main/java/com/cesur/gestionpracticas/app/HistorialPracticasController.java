@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class HistorialPracticasController {
@@ -20,11 +23,12 @@ public class HistorialPracticasController {
     private AlumnoRepository repAl;
 
 
-    @GetMapping("/historial")
-    public String setHistorial(Model atrb, HttpSession session) {
+    @RequestMapping(value="/historialPractica/{id}", method = RequestMethod.GET)
+    public String setHistorial(Model atrb, HttpSession session, @PathVariable Long id) {
         //session.setAttribute("idAl", 2L);
-        Long idAlum = (Long) session.getAttribute("idAl");
-        Alumno al = repAl.getById(idAlum);
+        //Long idAlum = (Long) session.getAttribute("idAl");
+        System.out.println("el id que llega es "+id);
+        Alumno al = repAl.getById(id);
         String nombre = al.getNombre();
         String curso = al.getCurso();
         ArrayList<Practica> practicas = new ArrayList<>(al.getPracticas());
@@ -32,7 +36,7 @@ public class HistorialPracticasController {
         atrb.addAttribute("curso", curso);
         atrb.addAttribute("practicas", practicas);
 
-        return "hitorialPractica";
+        return "historialPractica";
     }
 
 

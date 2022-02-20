@@ -100,6 +100,10 @@ margin: auto;
     border-radius: 6px;
 }
 
+.historial a{
+    color:whitesmoke;
+}
+
 .anadirPractica{
     background-color: #115bce;
     color:whitesmoke;
@@ -109,6 +113,10 @@ margin: auto;
     font-size: 1.3rem;
     border-radius: 6px;
     display:none;
+}
+
+.anadirPractica a{
+    color:whitesmoke;
 }
 
 .slidertareas p{
@@ -134,15 +142,6 @@ margin: auto;
   overflow:hidden;
 }
 
-/*.wrapper::before{
-    content:url('../img/flechaIzquierda.png');
-    
-}
-
-.wrapper::after{
-    content:url('../img/flechaDerechaa.png');
-    
-}*/
 .overflow{
   display:grid;
   grid-auto-columns: minmax(170px, auto);

@@ -11,8 +11,9 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        <a href="../../java/com/cesur/gestionpracticas/models/Practica.java"></a>
 
-        <form action="#" th:action="@{/anadir}" method="post" th:object="${prac}">
+        <form  method="post" th:object="${prac}">
 
             <ul>
                 <li>
@@ -23,7 +24,7 @@ and open the template in the editor.
 
                 <li>
                     <label for="select">Tipo de practica</label>
-                    <select id="select" name="select" th:field="*{tipo}">
+                    <select id="select" name="tipo" th:field="*{tipo}">
                         <option th:each="i : ${tipoarray}" th:value="${i}" th:text="${i}"></option>
                     </select>
 
@@ -36,7 +37,7 @@ and open the template in the editor.
 
                 <li>
                     <label for="horas">Horas empleadas</label>
-                    <input type="range" min="1" max="8" id="horas" name="horas" th:field="*{horasEmpleadas}"> 
+                    <input type="range" min="1" max="8" id="horas" name="horas_empleadas" th:field="*{horasEmpleadas}"> 
                     <span id="inputRange"></span>
                 </li>
 
@@ -46,9 +47,10 @@ and open the template in the editor.
                 </li>
 
                 <li>
-                    <input type="submit" value="Guardar">
+                   <input type="submit" value="Guardar"/>
                 </li>
-                <button th:href="@{/login}">Volver</button>
+                <p th:text="${idAl}"></p>
+                <!--<button th:href="@{'/alumno/'+${idAl}">Volver</button>-->
 
             </ul>
 

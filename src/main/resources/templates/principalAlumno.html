@@ -46,25 +46,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
             <div class="wrapper">
                 <button class="previous"><img th:src="@{/img/flechaIzquierda.png}"></button>
                     <div class="overflow">
-                      <div class="anadir"></div>
-                        <div class="iteracion" th:each="p:${principalAlumno.curso}">
-                            <div class="bloco"><p>Day 1</p></div>
-                            <div class="bloco"><p>Day 1</p></div>
-                            <div class="bloco"><p>Day 1</p></div>
-                            <div class="bloco"><p>Day 1</p></div>
-                            <div class="bloco"><p>Day 1</p></div>
-                            <div class="bloco"><p>Day 1</p></div>
-                            <div class="bloco"><p>Day 1</p></div><!-- comment -->
-                            <div class="bloco"><p>Day 1</p></div><!-- comment -->
-                            <div class="bloco"><p>Day 1</p></div>
+                        <a th:href="@{'/anadir/'+${principalAlumno.id}}"> <div class="anadir"></div></a>
+                        <div class="iteracion" th:each="p:${principalAlumno.practicas}">
+                            <div class="bloco"><p th:text="${p.fecha}">Hola</p></div>
+                            <!--<a th:href="@{'/editar-practica/13/40'}">1</a>-->
                       </div>
                     </div>
                 <button class="next">
                     <img th:src="@{/img/flechaDerechaa.png}">
                 </button>
             </div>
-            <button class="historial">Historial</button>
-            <button class="anadirPractica">Añadir Practica</button>
+            <button class="historial"><a th:href="@{'/historialPractica/'+${principalAlumno.id}}">Historial</button>
+            <button class="anadirPractica"><a th:href="@{'/anadir/'+${principalAlumno.id}}">Añadir Practica</a></button>
         </div>
         
         
