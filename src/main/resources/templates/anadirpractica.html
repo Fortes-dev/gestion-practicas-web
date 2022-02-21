@@ -46,8 +46,9 @@ and open the template in the editor.
                   th:field="*{observaciones}"></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="button" class="btn btn-secondary" th:onclick="'javascript:back(\'' + ${idAl} + '\');'">Volver</button>
 </form>
-<button class="btn btn-secondary" th:onclick="'javascript:back(\'' + ${idAl} + '\');'">Volver</button>
+
 
 <script>
 

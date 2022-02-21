@@ -4,23 +4,45 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>Sobre nosotros</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link  rel="stylesheet" type="text/css" th:href="@{/styles/aboutLayout.css}"> 
-    </head>
-    <body>
-        <video autoplay muted loop id="myVideo">
-            <source src="devteam.mp4" type="video/mp4">
-        </video>
-        <div class="nombreEquipo">
-            <h1>CaudilloCarles development consulting</h1>
-        </div>
+  <head>
+    <title>Hero Image 1</title>
+    <base href="url" target="_blank" />
+    <meta name="author" content="Salia in Red" />
+    <meta charset="UTF-8" />
+    <meta lang="en" />
+    <meta name="desciption" content="HTML and CSS Hero Image Number 1" />
+    <meta name="keywords" content="HTML, CSS, hero-image" />
+    <meta name="viewport" content="width:device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/styles/aboutLayout.css">
+  </head>
+  
+  <body>
+      <video autoplay muted loop id="myVideo">
+                <source th:src="@{/img/devteam.mp4}" type="video/mp4">
+            </video>
+        <div id="heading">
+          <h1>CaudilloCarles Tech Consulting</h1>
+        </div>  
         <div class="miembros">
-            <p>Carlos Fortes</p>
-            <p>Roberto Garcia</p>
-            <p>Pablo Hierrezuelo</p>
-        </div>
-    </body>
-</html>
+            
+                <h2>Carlos Fortes</h2>
+                    <div class="links">
+                        <a href="https://github.com/Fortes-dev"> Check his Github account </a>
+                        <a href="https://www.linkedin.com/in/carlos-fortes-medina-030306222/"> Check his LinkedIn Profile </a>
+                    </div>
+                <h2>Roberto Garcia</h2>
+                    <div class="links">
+                        <a href="https://github.com/rberto11"> Check his Github account </a>
+                        <a href="https://www.linkedin.com/in/roberto-garc%C3%ADa-rodr%C3%ADguez-1780671b9//"> Check his LinkedIn Profile </a>
+                    </div>
+                <h2>Pablo Hierrezuelo</h2>
+                    <div class="links last">
+                        <a href="https://github.com/Pablohierre"> Check his Github account </a>
+                        <a href="www.linkedin.com/in/pablo-hierrezuelo-muñoz-42b735133"> Check his LinkedIn Profile </a>
+                    </div>
+            </div>
+
+      </body>
+    </html>
+        
+ 

@@ -40,7 +40,7 @@ public class LoginController {
     }
         
      @PostMapping(value="/login")
-    public String loginCheck(@ModelAttribute(value="alumno") Alumno alumno , Model model){
+    public String loginCheck(@ModelAttribute(value="alumno") Alumno alumno , Model model, HttpSession session){
         System.out.println("Entra en el loginCheck");
         String wrongPassword="Contraseña o email incorrectos";
         String wrongEmail="Email incorrecto";
@@ -55,6 +55,7 @@ public class LoginController {
                  retornar = "login";
              } else {
                  retornar = "redirect:/alumno/" + usuario.getId();
+                 session.setAttribute("usuario", usuario.getId());
              }
          } catch (NullPointerException e) {
              model.addAttribute("wrongPassword", wrongEmail);

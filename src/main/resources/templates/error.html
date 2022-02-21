@@ -24,9 +24,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <div class="error">
           <div class="error__title">Error</div>
           <div class="error__subtitle">Hmmm...</div>
-          <div class="error__description">It looks like one of the  developers fell asleep</div>
-          <button class="error__button error__button--active">LOGIN</button>
-          <button class="error__button">CONTACT</button>
+          <div class="error__description">Nuestros desarrolladores están bebiendo cerveza</div>
+         <button class="error__button error__button--active" th:onclick="'javascript:back(\'' + ${id} + '\');'">Inicio</button> 
+         <button class="error__button error__button--active" th:onclick="'javascript:login();'">Login</button> 
+          
         </div>
 
         <div class="astronaut">
@@ -56,4 +57,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <div class="astronaut__head-visor-flare2"></div>
           </div>
         </div>
+        
+        
     </body>
+    <script>
+    function login() {
+        location.href = "/login";
+    }
+    function back(value) {
+        location.href = "/alumno/" + value;
+    }
+    </script>
+</html>

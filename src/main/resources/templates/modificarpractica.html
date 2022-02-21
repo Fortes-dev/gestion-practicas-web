@@ -46,10 +46,10 @@ and open the template in the editor.
                   th:field="*{observaciones}"></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Guardar</button>
-
+    <button type="button" class="btn btn-secondary" th:onclick="'javascript:back(\'' + ${practica.idAlumno.id} + '\');'">Volver</button>
+<button type="button" class="btn btn-danger" th:onclick="'javascript:borrar(\'' + ${practica.id} + '\');'">Eliminar</button>
 </form>
-<button class="btn btn-secondary" th:onclick="'javascript:back(\'' + ${practica.idAlumno.id} + '\');'">Volver</button>
-<button class="btn btn-danger" th:onclick="'javascript:borrar(\'' + ${practica.id} + '\');'">Eliminar</button>
+
 <script>
 
     const input = document.getElementById("inputRange");

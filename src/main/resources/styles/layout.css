@@ -366,6 +366,16 @@ margin: auto;
 /*    --------------------------------------------------
     :: MEDIA QUERIES
   -------------------------------------------------- */
+@media(max-width:1300px){
+    div.inforpacticas{
+      display: flex;  
+    }
+    div.inforpacticas img{
+        
+    }
+}
+
+
 @media(max-width:767px){
   .wrapper{
     max-width:100%;

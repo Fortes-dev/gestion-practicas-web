@@ -1,11 +1,84 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-image: radial-gradient(circle, #87556f, #59405c, #322f3d, #4b5d67);
+  /*background: url("https://docs.google.com/uc?export=download&id=1mZmjV0bQoDWZMFYg_i6RU0zYusbwisnS") no-repeat center;*/
+  background-size: cover;
+  position: relative;
+  min-height: 100vh;
+  text-align: center;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+h2{
+    margin-top: 35px;
+}
+.miembros{
+        
+    font-size: 1.7rem;
+}
 #myVideo {
   position: fixed;
   right: 0;
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
+  z-index: -1;
 }
 
-.body{
-    background-color: red;
+.links a{
+   color: white;
+    margin: 20px;
+    margin-bottom: 20px;
+   
+}
+
+#heading {
+  padding: 150px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 620px) {
+  #heading {
+    padding: 100px 0;
+  }
+}
+
+h1 {
+  font-size: 5em;
+  padding-bottom: 20px;
+  color: white;
+  text-shadow: 0 0 8px grey;
+  text-transform: capitalize;
+}
+
+h2 {
+  font-size: 2em;
+  color: white;
+  text-shadow: 0 0 8px grey;
+}
+
+button {
+  padding: 25px;
+  font-family: 'Red hat display', sans-serif;
+  font-size: 1em;
+  border-radius: 15px;
+  border: none;
+  background-color: rgba(75, 93, 103, 0.8);
+  color: #151b1e;
+}
+
+button:hover {
+  background-color: rgba(181, 194, 201, 0.7);
+}
+
+.last{
+    margin-bottom: 150px;
 }
